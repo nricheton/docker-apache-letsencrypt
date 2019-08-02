@@ -19,6 +19,8 @@ RUN apt-get -y update && \
     add-apt-repository ppa:certbot/certbot && \
     apt-get -y update && \
     apt-get install -q -y python-certbot-apache && \
+    # Add modsecurity
+    apt-get install -q -y --no-install-recommends  libapache2-mod-security2 modsecurity-crs && \    
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -41,4 +43,5 @@ RUN chmod +x /*.sh && chmod +x /etc/my_init.d/*.sh && chmod +x /etc/service/apac
 # Stuff
 EXPOSE 80
 EXPOSE 443
-VOLUME [ "$LETSENCRYPT_HOME", "/etc/apache2/sites-available", "/var/log/apache2" ]
+
+#VOLUME [ "$LETSENCRYPT_HOME", "/etc/apache2/sites-available", "/var/log/apache2" ]
