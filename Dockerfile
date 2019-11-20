@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.11
-MAINTAINER BirgerK <birger.kamp@gmail.com>
+MAINTAINER Nicolas Richeton <nicolas.richeton@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LETSENCRYPT_HOME /etc/letsencrypt
@@ -45,3 +45,4 @@ EXPOSE 80
 EXPOSE 443
 
 #VOLUME [ "$LETSENCRYPT_HOME", "/etc/apache2/sites-available", "/var/log/apache2" ]
+HEALTHCHECK CMD curl --fail http://localhost/ || exit 1
