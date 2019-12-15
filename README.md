@@ -16,7 +16,7 @@ There are some things you have to care about in your apache-config if you want t
 For an easy test-startup you just have to:
 
 ```
-$ docker run -d --name apache-ssl birgerk/apache-letsencrypt
+$ docker run -d --name apache-ssl nricheton/docker-apache-security-letsencrypt
 ```
 
 Now you have locally an apache running, which gets it SSL-certificates from Let's Encrypt.
