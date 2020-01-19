@@ -15,8 +15,6 @@ RUN echo $WEBMASTER_MAIL > /etc/container_environment/WEBMASTER_MAIL && \
     echo $DOMAINS > /etc/container_environment/DOMAINS && \
     echo $LETSENCRYPT_HOME > /etc/container_environment/LETSENCRYPT_HOME
 
-#CMD ["/sbin/my_init"]
-
 # Base setup
 RUN apt-get -y update && \
     apt-get install -q -y curl apache2 software-properties-common && \
@@ -59,6 +57,8 @@ ADD config/rsyslog.conf /etc/rsyslog.conf
 # Stuff
 EXPOSE 80
 EXPOSE 443
+
+CMD ["supervisord","-n","-c","/etc/supervisord.conf"]
 
 #VOLUME [ "$LETSENCRYPT_HOME", "/etc/apache2/sites-available", "/var/log/apache2" ]
 HEALTHCHECK CMD curl --fail http://localhost/ || exit 1
