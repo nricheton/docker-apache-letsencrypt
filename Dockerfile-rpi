@@ -15,7 +15,7 @@ RUN echo $WEBMASTER_MAIL > /etc/container_environment/WEBMASTER_MAIL && \
     echo $DOMAINS > /etc/container_environment/DOMAINS && \
     echo $LETSENCRYPT_HOME > /etc/container_environment/LETSENCRYPT_HOME
 
-CMD ["/sbin/my_init"]
+#CMD ["/sbin/my_init"]
 
 # Base setup
 RUN apt-get -y update && \
