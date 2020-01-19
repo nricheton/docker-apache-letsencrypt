@@ -11,9 +11,9 @@ ENV DOMAINS ""
 ENV WEBMASTER_MAIL ""
 
 # Manually set the apache environment variables in order to get apache to work immediately.
-RUN echo $WEBMASTER_MAIL > /etc/container_environment/WEBMASTER_MAIL && \
-    echo $DOMAINS > /etc/container_environment/DOMAINS && \
-    echo $LETSENCRYPT_HOME > /etc/container_environment/LETSENCRYPT_HOME
+#RUN echo $WEBMASTER_MAIL > /etc/container_environment/WEBMASTER_MAIL && \
+#    echo $DOMAINS > /etc/container_environment/DOMAINS && \
+#    echo $LETSENCRYPT_HOME > /etc/container_environment/LETSENCRYPT_HOME
 
 # Base setup
 RUN apt-get -y update && \
