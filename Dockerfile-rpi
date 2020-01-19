@@ -24,7 +24,7 @@ RUN apt-get -y update && \
     # Add modsecurity
     apt-get install -q -y --no-install-recommends  libapache2-mod-security2 modsecurity-crs && \    
     # Add cron & python
-    apt-get install -q -y --no-install-recommends  cron python-setuptools python-pip && \ 
+    apt-get install -q -y --no-install-recommends  cron python-setuptools python-pip rsyslog && \ 
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
