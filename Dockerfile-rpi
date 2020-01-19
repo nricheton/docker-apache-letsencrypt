@@ -53,6 +53,7 @@ ADD config/crontab /etc/crontab
 # Supervisor 
 ADD config/supervisord.conf /etc/supervisord.conf
 ADD config/rsyslog.conf /etc/rsyslog.conf
+RUN mkdir /var/log/supervisor/
 
 # Stuff
 EXPOSE 80
