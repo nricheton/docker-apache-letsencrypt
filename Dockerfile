@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.11
+FROM phusion/baseimage:master-amd64
 MAINTAINER Nicolas Richeton <nicolas.richeton@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
