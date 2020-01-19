@@ -1,4 +1,4 @@
-FROM  balenalib/armv7hf-debian:buster
+FROM balenalib/raspberrypi3-ubuntu:latest-run
 
 # Enable building ARM container on x86 machinery on the web (comment out next line if built on Raspberry)
 RUN [ "cross-build-start" ]
