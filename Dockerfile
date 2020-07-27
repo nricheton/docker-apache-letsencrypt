@@ -16,7 +16,7 @@ CMD ["/sbin/my_init"]
 # Base setup
 RUN apt-get -y update && \
     apt-get install -q -y curl apache2 software-properties-common && \
-    add-apt-repository ppa:certbot/certbot && \
+#    add-apt-repository ppa:certbot/certbot && \
     apt-get -y update && \
     apt-get install -q -y python-certbot-apache && \
     # Add modsecurity
