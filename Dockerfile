@@ -10,12 +10,13 @@ ENV WEBMASTER_MAIL ""
 RUN echo $WEBMASTER_MAIL > /etc/container_environment/WEBMASTER_MAIL && \
     echo $DOMAINS > /etc/container_environment/DOMAINS && \
     echo $LETSENCRYPT_HOME > /etc/container_environment/LETSENCRYPT_HOME
-
+    
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["/sbin/my_init"]
 
 # Base setup
 RUN apt-get -y update && \
-    apt-get install -q -y curl apache2 software-properties-common && \
+    apt-get install -q -y curl apache2 software-properties-common dumb-init && \
 #    add-apt-repository ppa:certbot/certbot && \
     apt-get -y update && \
     apt-get install -q -y python3-certbot-apache && \
