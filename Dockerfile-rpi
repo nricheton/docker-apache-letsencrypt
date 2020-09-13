@@ -17,7 +17,7 @@ ENV WEBMASTER_MAIL ""
 
 # Base setup
 RUN apt-get -y update && \
-    apt-get install -q -y curl apache2 software-properties-common && \
+    apt-get install -q -y curl apache2 software-properties-common dumb-init && \
     add-apt-repository ppa:certbot/certbot && \
     apt-get -y update && \
     apt-get install -q -y python-certbot-apache && \
@@ -59,6 +59,7 @@ RUN mkdir /var/log/supervisor/
 EXPOSE 80
 EXPOSE 443
 
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["supervisord","-n","-c","/etc/supervisord.conf"]
 
 #VOLUME [ "$LETSENCRYPT_HOME", "/etc/apache2/sites-available", "/var/log/apache2" ]
