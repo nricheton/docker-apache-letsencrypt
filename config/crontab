@@ -1,1 +1,1 @@
-42 0 1 * * letsencrypt renew >/dev/null 2>&1
+42 0 1 * * root letsencrypt renew >/dev/null 2>&1
