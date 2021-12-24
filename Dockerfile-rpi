@@ -20,7 +20,7 @@ RUN apt-get -y update && \
     apt-get install -q -y curl apache2 software-properties-common dumb-init && \
 #    add-apt-repository ppa:certbot/certbot && \
     apt-get -y update && \
-    apt-get install -q -y python-certbot-apache && \
+    apt-get install -q -y python3-certbot-apache && \
     # Add modsecurity
     apt-get install -q -y --no-install-recommends  libapache2-mod-security2 modsecurity-crs && \    
     # Add cron & python
