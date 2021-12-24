@@ -29,7 +29,7 @@ RUN apt-get -y update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Add supervisor
-RUN pip install wheel && pip install supervisor supervisor-stdout
+RUN pip install wheel && pip install supervisor git+https://github.com/coderanger/supervisor-stdout
 
 # configure apache
 ADD config/mods-available/proxy_html.conf /etc/apache2/mods-available/
